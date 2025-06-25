@@ -1,0 +1,7 @@
+pandas
+sqlalchemy
+pymysql
+streamlit
+python-dotenv
+plotly
+nba_api
