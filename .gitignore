@@ -1,4 +1,5 @@
-# Arquivos de variáveis de ambiente 
+# Arquivos de variáveis de ambiente
+.env
 
 # Pastas de cache e ambientes virtuais do Python
 __pycache__/
@@ -6,7 +7,7 @@ __pycache__/
 venv/
 env/
 
-# Arquivos de dados gerados pelos scripts 
+# Arquivos de dados gerados pelos scripts
 data/
 
 # Arquivos específicos da IDE Spyder
