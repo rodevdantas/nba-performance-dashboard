@@ -1,14 +1,12 @@
 
 from sqlalchemy import create_engine, Column, Integer, String, DECIMAL, ForeignKey, text
 from sqlalchemy.orm import sessionmaker, relationship, declarative_base
-from dotenv import load_dotenv # Adicionado: Carregar .env aqui
+from dotenv import load_dotenv 
 from pathlib import Path
 import os
-import streamlit as st # Necessário para st.error e st.stop se houver erro crítico na conexão
+import streamlit as st 
 # %%
 
-# --- Carregamento de Variáveis de Ambiente (apenas neste arquivo para credenciais do DB) ---
-# Caminho para o .env (3 níveis acima: dashboard/ -> src/ -> nba-performance-dashboard/)
 dotenv_path = Path(__file__).resolve().parent.parent.parent / '.env'
 load_dotenv(dotenv_path)
 
@@ -17,12 +15,9 @@ DB_NAME = os.getenv('DB_NAME')
 DB_USER = os.getenv('DB_USER')
 DB_PASSWORD = os.getenv('DB_PASSWORD')
 
-# Validação rápida de credenciais ao importar este módulo
 if not all([DB_HOST, DB_NAME, DB_USER, DB_PASSWORD]):
-    # No Streamlit (app.py) isso será capturado, para scripts ETL, causará um erro que é o desejado.
     raise ValueError("Erro: Variáveis de ambiente do banco de dados não carregadas. Verifique o arquivo .env e o caminho.")
 
-# --- Definição do Modelo de Dados (ORM) ---
 Base = declarative_base()
 
 class Jogador(Base):
@@ -47,12 +42,9 @@ class EstatisticaTemporada(Base):
     perc_lances_livres = Column(DECIMAL(5,3), nullable=False)
     jogador = relationship("Jogador", back_populates="estatisticas")
 
-# --- Configuração do Engine e SessionLocal (Conexão com o BD) ---
 try:
     SQLALCHEMY_DATABASE_URL = f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}"
     engine = create_engine(SQLALCHEMY_DATABASE_URL)
-    # Testar a conexão aqui. Em Streamlit, o st.error/st.stop já faz isso no app.py
-    # Mas aqui, como módulo, é melhor levantar um erro.
     with engine.connect() as connection:
         pass 
 
