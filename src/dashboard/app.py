@@ -33,9 +33,9 @@ from dashboard.db_setup import engine, SessionLocal, Jogador, EstatisticaTempora
 
 st.markdown("""
 <style>
-    /* Estilo para o container do título e subtítulo */
+    /* Titulo e subtitulo */
     .title-container {
-        background-color: #2a3a52; /* Cor de fundo escura (azul marinho/charcoal) */
+        background-color: #2a3a52; 
         padding: 30px 0;
         border-radius: 10px;
         text-align: center;
@@ -56,7 +56,7 @@ st.markdown("""
         text-align: center !important;
     }
 
-    /* Estilo para a tabela (st.dataframe) */
+    /* Tabela (st.dataframe) */
     div[data-testid="stDataFrame"] {
         border: 2px solid #2a3a52;
         border-radius: 8px;
@@ -86,7 +86,6 @@ st.markdown("""
         background-color: #cceeff;
     }
 
-    /* Ajustes para headers e subheaders */
     h1, h2, h3, h4, h5, h6 {
         color: #2a3a52;
     }
