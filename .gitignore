@@ -1,18 +1,7 @@
-# Arquivos de variáveis de ambiente
 .env
-
-# Pastas de cache e ambientes virtuais do Python
 __pycache__/
 *.pyc
 venv/
 env/
-
-# Arquivos de dados gerados pelos scripts
 data/
-
-# Arquivos específicos da IDE Spyder
 .spyproject/
-
-# Arquivos de log ou outros temporários
-*.log
-*.tmp
