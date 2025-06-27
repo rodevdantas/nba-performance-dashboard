@@ -46,27 +46,21 @@ The main goal was to demonstrate the ability to build an end-to-end data solutio
 
 The project organization follows a modular and scalable structure:
 
-• `nba-performance-dashboard/`
-  • `.env`
-  • `.gitignore`
-  • `README.md`
-  • `requirements.txt`
-  • `src/`
-    • `__init__.py`
-    • `etl/`
-      • `__init__.py`
-      • `extract.py`
-      • `transform.py`
-      • `load.py`
-    • `dashboard/`
-      • `__init__.py`
-      • `app.py`
-      • `db_setup.py`
-  • `data/`
-    • `raw/`
-      • `nba_stats_brutas.csv`
-    • `processed/`
-      • `nba_stats_transformadas.csv`
+- `nba-performance-dashboard/`
+  - `requirements.txt`
+  - `src/`
+    - `etl/`
+      - `extract.py`
+      - `transform.py`
+      - `load.py`
+    - `dashboard/`
+      - `app.py`
+      - `db_setup.py`
+  - `data/`
+    - `raw/`
+      - `nba_stats_brutas.csv`
+    - `processed/`
+      - `nba_stats_transformadas.csv`
 
 ## Analyses and Insights Generated
 
